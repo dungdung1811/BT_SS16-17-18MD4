@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Mirrored from shum.volkovdesign.com/authorization.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 09:08:47 GMT -->
+<!--Head-->
+<th:block th:insert="user/layout/head.html"></th:block>
+<!--End Head-->
+
+<body class="body">
+<!-- header -->
+<th:block th:insert="user/layout/header-dark.html"></th:block>
+<!-- end header -->
+
+<!-- menu -->
+<th:block th:insert="user/layout/menu.html"></th:block>
+<!-- end menu -->
+
+<!-- catmenu -->
+<th:block th:insert="user/layout/catmenu.html"></th:block>
+<!-- end catmenu -->
+
+<!-- page -->
+<div class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page__title">
+                    <h2>Authorization</h2>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="authorization">
+                    <div class="nav page__nav" role="tablist">
+                        <a class="active" id="tab-1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Log In</a>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-1">
+                            <form action="/postLogin" method="post" th:object="${user}" class="authorization__form">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="email" class="form__label">Email</label>
+                                        <input id="email" type="text" th:field="*{email}" class="form__input">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="password" class="form__label">Password</label>
+                                        <input id="password" type="password"th:field="*{password}" class="form__input">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form__checkbox">
+                                            <input type="checkbox" id="remember" th:name="checked" th:checked="${isCheck}">
+                                            <label for="remember">Remember Me</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="form__send" type="submit">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page -->
+
+<!-- footer -->
+<th:block th:insert="user/layout/footer.html"></th:block>
+
+<!-- end footer -->
+
+<!-- choose a city -->
+<div id="city" class="zoom-anim-dialog mfp-hide modal">
+    <input type="text" class="modal__input" placeholder="Search a city...">
+
+    <div class="modal__cities">
+        <a href="#">Moscow</a>
+        <a class="active" href="#">Minsk</a>
+        <a href="#">London</a>
+        <a href="#">New York</a>
+        <a href="#">Tokyo</a>
+        <a href="#">Cape Town</a>
+        <a href="#">Rio de Janeiro</a>
+        <a href="#">Sydney</a>
+        <a href="#">Lemesos</a>
+        <a href="#">Dinajpur</a>
+        <a href="#">Cartagena</a>
+        <a href="#">Waitakere</a>
+        <a href="#">Montpellier</a>
+        <a href="#">Berlin</a>
+        <a href="#">Valencia</a>
+        <a href="#">Parma</a>
+    </div>
+</div>
+<!-- end choose a city -->
+
+<!-- JS -->
+<th:block th:insert="user/layout/script.html"></th:block>
+</body>
+
+<!-- Mirrored from shum.volkovdesign.com/authorization.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 09:08:47 GMT -->
+</html>
